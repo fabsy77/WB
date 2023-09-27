@@ -1,0 +1,8 @@
+        Na classe ProductsCart:
+
+        ANTES
+        return $this->sql->query("SELECT count(*)  FROM products_cart WHERE cart_id = :ucartid AND product_id = :uproduct_id", $params);
+
+        DEPOIS 
+        return $this->sql->query("SELECT count(*) as qtt FROM products_cart WHERE cart_id = :ucartid AND product_id = :uproduct_id", $params);
+        No count foi feito um alias ou seja colocou um "apelido no count" entao ele se "chamara qtt"
